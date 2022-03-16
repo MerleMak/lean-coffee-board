@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Entry from './components/Entry';
+import Entryform from './components/Entryform';
 
 export default function App() {
   const [entries, setEntries] = useState([]);
+
+  function handleEntry(input) {
+    setEntries([...entries, { text: input }]);
+  }
 
   useEffect(() => {
     getEntries();
@@ -25,6 +30,7 @@ export default function App() {
           </li>
         ))}
       </Grid>
+      <Entryform onEntry={handleEntry} />
     </>
   );
 }
