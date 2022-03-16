@@ -37,7 +37,7 @@ const Form = styled.form`
   input {
     width: 100%;
     margin-right: 20px;
-    padding: 20px;
+    padding: 15px;
     border: none;
   }
 `;
