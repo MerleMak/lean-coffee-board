@@ -13,14 +13,19 @@ describe('Entryform', () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  it('submits form data when every field is filled out', () => {
-    const handleSubmit = jest.fn();
-    render(<Entryform onEntry={handleEntry} />);
+  it('shows a text and the author on submit of the form', () => {
+    const callback = jest.fn();
+    render(<Entryform onSubmit={callback} />);
 
-    const submitButton = screen.getByRole('button');
+    const form = screen.getByRole('form', { name: 'Create a new entry' });
+    expect(form).toBeInTheDocument();
 
-    userEvent.click(submitButton);
+    const input = screen.getByPlaceholderText('write an entry...', {
+      exact: false,
+    });
+    userEvent.type(input, 'Lorem ipsum dolor sit.{enter}');
+    expect(form).toContainElement(input);
 
-    expect(handleSubmit).toHaveBeenCalled();
+    expect(callback).toHaveBeenCalledWith('Lorem ipsum dolor sit.');
   });
 });

@@ -1,27 +1,51 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import ScreenReaderOnly from './ScreenReaderOnly';
 
-export default function Entryfrom({ onEntry }) {
-  const [newEntry, setNewEntry] = useState('');
-
+export default function Entryform({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
-    onEntry(newEntry);
-    setNewEntry('');
+    const form = event.target;
+    const inputElement = form.elements['add-entry'];
+    onSubmit(inputElement.value);
+    form.reset();
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="add-entry">Create a form</label>
+      <Form
+        autoComplete="off"
+        aria-label="Create-a-new-entry"
+        onSubmit={handleSubmit}
+      >
+        <label htmlFor="add-entry">
+          <ScreenReaderOnly>Create a new entry</ScreenReaderOnly>
+        </label>
         <input
-          id="add-entry"
           name="add-entry"
+          id="add-entry"
           placeholder="write an entry..."
-          onChange={event => setNewEntry(event.target.value)}
-          value={newEntry}
-        ></input>
-        <button>+</button>
-      </form>
+          type="text"
+        />
+        <PlusButton aria-label="Add-new-entry">+</PlusButton>
+      </Form>
     </>
   );
 }
+
+const Form = styled.form`
+  display: flex;
+  justify-content: space-between;
+  input {
+    width: 100%;
+    margin-right: 20px;
+    padding: 20px;
+    border: none;
+  }
+`;
+
+const PlusButton = styled.button`
+  border-radius: 50%;
+  line-height: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+`;

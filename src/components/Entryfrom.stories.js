@@ -1,8 +1,11 @@
-import Entryform from './Entryform';
+import Entryform from './Entryform.js';
 
 export default {
-  title: 'components/Entryform',
+  title: 'components/EntryForm',
   component: Entryform,
+  argTypes: {
+    onSubmit: 'onSubmit',
+  },
 };
 
 const Template = args => <Entryform {...args} />;
