@@ -3,11 +3,18 @@
 GET {{baseUrl}}/entries
 
 ###
-
 POST {{baseUrl}}/entries
 Content-Type: application/json
 
 {
   "text": "Another text",
   "author": "John"
+}
+
+### 
+DELETE {{baseUrl}}/entries
+Content-Type: application/json
+
+{
+  "_id": "62349638edefb5ce60513943"
 }
