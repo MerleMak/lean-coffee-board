@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import CreateAuthor from './components/CreateAuthor';
-import Entry from './components/Entry';
-import Entryform from './components/Entryform';
+import CreateAuthor from './components/CreateAuthor/CreateAuthor';
+import Entry from './components/Entry/Entry';
+import EntryForm from './components/EntryForm/Entryform';
 import { useState } from 'react';
 import useSWR from 'swr';
 import DayJS from 'react-dayjs';
@@ -61,7 +61,7 @@ export default function App() {
 
   return author ? (
     <>
-      <h1>Lean Coffee Board</h1>
+      <Header>Lean Coffee Board</Header>
       <EntryList role="list">
         {entries.map(({ text, author, created, _id, tempId, color }) => (
           <li key={_id ?? tempId}>
@@ -76,12 +76,16 @@ export default function App() {
           </li>
         ))}
       </EntryList>
-      <Entryform onSubmit={handleEntry} />
+      <EntryForm onSubmit={handleEntry} />
     </>
   ) : (
     <CreateAuthor onSubmit={handleAuthorInput} />
   );
 }
+
+const Header = styled.h1`
+  color: #ffecd1;
+`;
 
 const EntryList = styled.ul`
   display: grid;

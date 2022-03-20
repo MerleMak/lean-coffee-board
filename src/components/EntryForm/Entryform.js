@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ScreenReaderOnly from './ScreenReaderOnly';
 
-export default function Entryform({ onSubmit }) {
+export default function EntryForm({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -34,16 +34,22 @@ export default function Entryform({ onSubmit }) {
 const Form = styled.form`
   display: flex;
   justify-content: space-between;
-  input {
-    width: 100%;
-    margin-right: 20px;
-    padding: 15px;
-    border: none;
+  width: 100%;
+  border: none;
+  background-color:#001524;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+ 
   }
+  input {
+  width: 100%;
+  background-color:#001524;
+  padding: 15px;
+  border: none;
 `;
 
 const PlusButton = styled.button`
-  border-radius: 50%;
+  color: #ffecd1;
   line-height: 0;
   width: 28px;
   height: 28px;
