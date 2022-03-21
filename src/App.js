@@ -62,14 +62,14 @@ export default function App() {
     <>
       <Header>Lean Coffee Board</Header>
       <EntryList role="list">
-        {entries.map(({ text, author, created, _id, tempId, color }) => (
+        {entries.map(({ text, author, createdAt, _id, tempId, color }) => (
           <li key={_id ?? tempId}>
             <Entry
               text={text}
               author={author}
               color={color}
               _id={_id}
-              created={created}
+              createdAt={createdAt}
               onClick={() => handleDelete(_id)}
             />
           </li>
