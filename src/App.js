@@ -4,13 +4,13 @@ import Entry from './components/Entry/Entry';
 import EntryForm from './components/EntryForm/Entryform';
 import { useState } from 'react';
 import useSWR from 'swr';
-import DayJS from 'react-dayjs';
+import dayjs from 'dayjs';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
 export default function App() {
   const [author, setAuthor] = useState('');
-  const [cardColor, setcardColor] = useState('');
+  const [cardColor, setCardColor] = useState('');
 
   const {
     data: entries,
@@ -25,15 +25,14 @@ export default function App() {
 
   function handleAuthorInput(author, color) {
     setAuthor(author);
-    setcardColor(color);
+    setCardColor(color);
   }
 
-  async function handleEntry(text, date) {
+  async function handleEntry(text) {
     const newEntry = {
       text,
       author: author,
       color: cardColor,
-      created: Date('now'),
       tempId: Math.random(),
     };
 
