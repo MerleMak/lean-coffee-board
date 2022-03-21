@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import dayjs from 'dayjs';
 
-export default function Entry({ text, author, createdAt, color, onClick }) {
+export default function Entry({ text, author, createdAt, color, onDelete }) {
   return (
-    <Card color={color} onClick={() => onClick(text)}>
-      <span>[{dayjs(createdAt).format('D.MM.YY H:mm')}]</span>
+    <Card color={color} onClick={onDelete}>
+      <span>{dayjs(createdAt).format('D.MM.YY H:mm')}</span>
       <span>{text}</span>
       <span> - {author}</span>
     </Card>

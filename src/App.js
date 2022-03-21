@@ -4,7 +4,6 @@ import Entry from './components/Entry/Entry';
 import EntryForm from './components/EntryForm/Entryform';
 import { useState } from 'react';
 import useSWR from 'swr';
-import dayjs from 'dayjs';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 
@@ -17,9 +16,8 @@ export default function App() {
     error: entriesError,
     mutate: mutateEntries,
   } = useSWR('/api/entries', fetcher, {
-    refreshInterval: 100,
+    refreshInterval: 1000,
   });
-
   if (entriesError) return <h1>Sorry, could not fetch.</h1>;
   if (!entries) return <em>loading...</em>;
 
@@ -49,6 +47,9 @@ export default function App() {
   }
 
   async function handleDelete(_id) {
+    const filteredEntries = entries.filter(entry => entry._id !== _id);
+    mutateEntries(filteredEntries, false);
+
     await fetch('/api/entries', {
       method: 'DELETE',
       headers: {
@@ -56,6 +57,7 @@ export default function App() {
       },
       body: JSON.stringify({ _id }),
     });
+    mutateEntries();
   }
 
   return author ? (
@@ -70,7 +72,7 @@ export default function App() {
               color={color}
               _id={_id}
               createdAt={createdAt}
-              onClick={() => handleDelete(_id)}
+              onDelete={() => handleDelete(_id)}
             />
           </li>
         ))}
