@@ -60,6 +60,17 @@ export default function App() {
     mutateEntries();
   }
 
+  async function toggleCheck(_id) {
+    await fetch('/api/entries', {
+      method: 'UPDATE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ _id }),
+    });
+    mutateEntries();
+  }
+
   return author ? (
     <>
       <Header>Lean Coffee Board</Header>
@@ -73,6 +84,7 @@ export default function App() {
               _id={_id}
               createdAt={createdAt}
               onDelete={() => handleDelete(_id)}
+              onCheck={() => toggleCheck(_id)}
             />
           </li>
         ))}

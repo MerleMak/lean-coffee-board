@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ScreenReaderOnly from './ScreenReaderOnly';
+import ScreenReaderOnly from '../../ScreenReaderOnly';
 
 export default function EntryForm({ onSubmit }) {
   function handleSubmit(event) {
@@ -68,7 +68,7 @@ const InputWrapper = styled.div`
     font-size: 16px;
     letter-spacing: 1px;
     line-height: 24px;
-    color: #ffecd1;
+    color: #007C94;
   }
   input[type='text' i] {
     padding: 1px 2px;
@@ -91,13 +91,14 @@ const PlusButton = styled.button`
   height: 32px;
   line-height: 28px;
   font-weight: 700;
+  border: none;
   border-radius: 50%;
   outline: none;
   background: none;
   margin: 0;
   padding: 0;
   svg {
-    color: #fa9871;
+    stroke: #007c94;
     circle {
       fill: transparent;
     }
