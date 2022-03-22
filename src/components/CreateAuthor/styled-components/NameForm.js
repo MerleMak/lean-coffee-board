@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default styled.form`
   color: #15616d;
   background-color: #ffecd1;
-  border: solid 2px #ff7d00;
+  border: solid 2px #fa9871;
   border-radius: 9px;
   padding: 20px;
   display: flex;
@@ -17,7 +17,7 @@ export default styled.form`
   button {
     border: #15616d 1px solid;
     border-radius: 5px;
-    background-color: #ff7d00;
+    background-color: #fa9871;
     padding: 9px;
     color: #ffecd1;
     margin-top: 10px;

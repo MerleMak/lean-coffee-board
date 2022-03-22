@@ -29,7 +29,7 @@ export default function CreateAuthor({ onSubmit }) {
       </NameInput>
       <ColorInput>
         <label htmlFor="color">What's your favorite color?</label>
-        <input name="color" id="color" type="color" defaultValue={'#798478'} />
+        <input name="color" id="color" type="color" defaultValue={'#3EA2B9'} />
       </ColorInput>
       <button>Remember me</button>
     </NameForm>

@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 export default function Entry({ text, author, createdAt, color, onDelete }) {
   return (
     <Card color={color} onClick={onDelete}>
-      <span>{dayjs(createdAt).format('D.MM.YY H:mm')}</span>
+      <span>{dayjs(createdAt).format('D.MM H:mm')}</span>
       <span>{text}</span>
       <span> - {author}</span>
     </Card>

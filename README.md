@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# COOlORS
+
+#007C94, (petrolblau)
+#3EA2B9, (hellpetrol)
+#FCC8A5, (helllachs)
+#FA9871, (lachs)
+#5A4547, (graubraun)
+
+#Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

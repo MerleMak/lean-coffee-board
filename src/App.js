@@ -85,7 +85,7 @@ export default function App() {
 }
 
 const Header = styled.h1`
-  color: #ffecd1;
+  color: #cd4631;
 `;
 
 const EntryList = styled.ul`

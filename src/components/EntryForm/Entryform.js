@@ -43,11 +43,13 @@ export default function EntryForm({ onSubmit }) {
 const Form = styled.form`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
+  height: 50px;
   border: none;
-  background-color: #001524;
   overflow-y: auto;
   overflow-x: hidden;
+  position: fixed;
+  bottom: 0px;
 `;
 
 const InputWrapper = styled.div`
@@ -73,7 +75,8 @@ const InputWrapper = styled.div`
   }
   span {
     align-self: center;
-    background-color: #ffecd1;
+    fill: transparent;
+    color: #FA9871
     height: 1px;
     transition: width 0.25s linear;
     width: 0;
@@ -82,8 +85,6 @@ const InputWrapper = styled.div`
 `;
 
 const PlusButton = styled.button`
-  color: #ffecd1;
-  border: none;
   box-sizing: border-box;
   align-self: center;
   width: 32px;
@@ -96,7 +97,10 @@ const PlusButton = styled.button`
   margin: 0;
   padding: 0;
   svg {
-    color: #ffecd1;
+    color: #fa9871;
+    circle {
+      fill: transparent;
+    }
   }
 `;
 
