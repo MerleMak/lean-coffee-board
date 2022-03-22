@@ -7,9 +7,9 @@ export default createGlobalStyle`
 
   body {
     margin: 12px;
-    font-family: sans-serif;
+    font-family: Abril Fatface;
     font-size: 112.5%;
-    background-color: #FCC8A5;
+    background-color: #EFF6E0
   }
 
   input, label, button, textarea {

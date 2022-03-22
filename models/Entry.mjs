@@ -2,10 +2,23 @@ import mongoose from 'mongoose';
 
 const schema = new mongoose.Schema(
   {
-    text: mongoose.SchemaTypes.String,
-    author: mongoose.SchemaTypes.String,
-    color: mongoose.SchemaTypes.String,
-    isChecked: mongoose.SchemaTypes.Boolean,
+    text: {
+      type: String,
+      required: true,
+      minlength: 2,
+    },
+    author: {
+      type: String,
+      default: 'Anonymous',
+    },
+    color: {
+      type: String,
+      default: '#3EA2B9',
+    },
+    isChecked: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     versionKey: false,

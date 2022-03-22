@@ -6,17 +6,18 @@ export default styled.section`
   align-items: center;
   gap: 8px;
   label {
-    color: #15616d;
+    color: #eff6e0;
     cursor: pointer;
   }
   input {
-    border: solid #15616d 1px;
+    border: solid #aec3b0 1px;
     border-radius: 5px;
-    background-color: #ffecd1;
+    background-color: #eff6e0;
     padding: 7px;
     width: 100%;
     color: #001524;
     ::placeholder {
+      font-family: Abril Fatface;
       color: #c2c5bb;
       padding: 7px;
     }

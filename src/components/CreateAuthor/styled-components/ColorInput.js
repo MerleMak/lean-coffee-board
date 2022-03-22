@@ -6,13 +6,13 @@ export default styled.div`
   align-items: center;
   gap: 9px;
   label {
-    color: #15616d;
+    color: #eff6e0;
     cursor: pointer;
   }
   input[type='color'] {
     border: solid #15616d 1px;
     border-radius: 5px;
-    background-color: #ffecd1;
+    background-color: #eff6e0;
     height: 35px;
     width: 50px;
     padding: 3px;
